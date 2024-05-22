@@ -39,7 +39,7 @@ const type_of_classifySchema = new mongoose.Schema({
   storage_method: [{
     type: String,
     enum: ['cooling', 'pickling', ' drying', 'sort', 'fill'],
-    default: 'drying',
+    default: undefined,
   }],
   //طرق الجني
   reep_method: [{
