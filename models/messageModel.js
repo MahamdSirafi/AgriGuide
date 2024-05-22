@@ -18,6 +18,7 @@ const messageSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
+    versionKey: false,
   }
 );
 const Message = mongoose.model('Message', messageSchema);

@@ -16,7 +16,9 @@ const pestsSchema = new mongoose.Schema({
     
   },
 },{
-  timestamps:true
+  timestamps:true,
+  versionKey: false,
+
 });
 const Pests = mongoose.model("Pests", pestsSchema);
 module.exports = Pests;

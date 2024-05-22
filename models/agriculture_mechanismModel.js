@@ -12,7 +12,8 @@ const agriculture_mechanismSchema = new mongoose.Schema({
   },
   
 },{
-  timestamps:true
+  timestamps:true,
+  versionKey: false,
 });
 const Agriculture_mechanism = mongoose.model("Agriculture_mechanism", agriculture_mechanismSchema);
 module.exports = Agriculture_mechanism;

@@ -2,61 +2,64 @@ const crypto = require('crypto');
 const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
-const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, 'Please enter  name!'],
-    trim: true,
-  },
-  //last_name: {
-   // type: String,
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, 'Please enter  name!'],
+      trim: true,
+    },
+    //last_name: {
+    // type: String,
     //required: [true, 'Please enter last name!'],
-   // trim: true,
-  //},
-   email: {
-     type: String,
-    //  required: [true, 'Please provide your email'],
-     unique: true,
-     lowercase: true,
-     validate: [validator.isEmail, 'Please provide a valid email'],
-   },
-  phone: {
-        type: String,
-        required: [true, "Please provide your phone"],
-        unique: true,
-        validate: {
-          validator:  function(el) {
-            return /(\+963\d{9}|09\d{8})/.test(el);
-          },
-  },  },  
- photo: {
-  type: String,
-   default: 'default.jpg',
-  },
-  role: {
-    type: String,
-    enum: ['user',  'admin','eng'],
-    default: 'user',
-  },
-  password: {
-    type: String,
-    required: [true, 'Please provide a password'],
-    minlength: 8,
-    select: false,
-  },
-  educationcertificate: {
-    type: String,
+    // trim: true,
+    //},
+    email: {
+      type: String,
+      //  required: [true, 'Please provide your email'],
+      unique: true,
+      lowercase: true,
+      validate: [validator.isEmail, 'Please provide a valid email'],
+    },
+    phone: {
+      type: String,
+      required: [true, 'Please provide your phone'],
+      unique: true,
+      validate: {
+        validator: function (el) {
+          return /(\+963\d{9}|09\d{8})/.test(el);
+        },
+      },
+    },
+    photo: {
+      type: String,
+      default: 'default.jpg',
+    },
+    role: {
+      type: String,
+      enum: ['user', 'admin', 'eng'],
+      default: 'user',
+    },
+    password: {
+      type: String,
+      required: [true, 'Please provide a password'],
+      minlength: 8,
+      select: false,
+    },
+    educationcertificate: {
+      type: String,
       default: undefined,
     },
-  passwordChangedAt: Date,
-  passwordResetToken: String,
-  passwordResetExpires: Date,
-  address: {
-   type: String,
-   required: [true, 'Please enter your address'],
+    passwordChangedAt: Date,
+    passwordResetToken: String,
+    passwordResetExpires: Date,
+    address: {
+      type: String,
+      required: [true, 'Please enter your address'],
+    },
   },
-
-});
+  { versionKey: false }
+);
 userSchema.pre('save', async function (next) {
   // Only run this function if password was actually modified
   if (!this.isModified('password')) return next();
