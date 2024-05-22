@@ -31,14 +31,7 @@ exports.signup = catchAsync(async (req, res, next) => {
   if(!req.body.role=="user"&&!req.body.role=="eng"){
 return next(new AppError("you must be a farmer or peasant",400))
   }
-  const newUser = await User.create({
-    name: req.body.name,
-    phone: req.body.phone,
-    password: req.body.password,
-    role: req.body.role,
-    email: req.body.email,
-    
-  });
+  const newUser = await User.create(req.body);
   const url = `${req.protocol}://${req.get('host')}/me`;
   // await new Email(newUser, url).sendWelcome();
   createSendToken(newUser, 201, req, res);

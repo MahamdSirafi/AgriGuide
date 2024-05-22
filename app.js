@@ -82,7 +82,7 @@ const chatRouter= require('./routes/chatRouter')
 // 3) ROUTES
 app.use('/', userRouter);
 app.use('/api/v1.0.0/agriculture_mechanisms', agriculture_mechanismRouter);
-app.use('/api/v1.0.0/advicess', advicesRouter);
+app.use('/api/v1.0.0/advices', advicesRouter);
 app.use('/api/v1.0.0/cares', careRouter);
 app.use('/api/v1.0.0/pests', pestsRouter);
 app.use('/api/v1.0.0/type_of_classifys', type_of_classifyRouter);

@@ -5,6 +5,11 @@ const careSchema = new mongoose.Schema({
     required: [true, 'Please enter the care name'],
     trim: true,
   },
+  discrption: {
+    type: String,
+    required: [true, 'Please enter the care name'],
+    trim: true,
+  },
 },{
   timestamps:true
 });

@@ -10,6 +10,11 @@ const pestsSchema = new mongoose.Schema({
     required: [true, 'Please enter the pests name'],
     trim: true,
   },
+  photo: {
+    type: String,
+    required: [true, 'enter'],
+    
+  },
 },{
   timestamps:true
 });

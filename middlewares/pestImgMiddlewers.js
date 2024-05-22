@@ -2,11 +2,11 @@ const multer = require('multer');
 const AppError = require('../utils/appError');
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'public/img/educations');
+    cb(null, 'public/img/pest');
   },
   filename: (req, file, cb) => {
-    const ext = file.mimetype.split('/')[1];
-    cb(null, `user-educationcertificate-${Date.now()}.${ext}`);
+    // const ext = file.mimetype.split('/')[1];
+    cb(null, `pest-${file.originalname}`);
   },
 });
 const multerFilter = (req, file, cb) => {
@@ -20,4 +20,4 @@ const upload = multer({
   storage: multerStorage,
   fileFilter: multerFilter,
 });
-exports.uploadUserEducationce = upload.single('educationcertificate');
+exports.uploadpest = upload.single('photo');

@@ -59,6 +59,16 @@ const type_of_classifySchema = new mongoose.Schema({
     enum: ['spray', 'dotting', 'watering', 'immersion'],
     default: 'spray ',
   }],
+  photo: {
+    type: String,
+    required: [true, 'enter photo.']
+
+  },
+  discription: {
+    type: String,
+    required: [true, 'enter photo.']
+
+  }
 },
   {
     timestamps: true

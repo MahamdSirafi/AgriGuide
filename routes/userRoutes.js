@@ -4,6 +4,7 @@ const authController = require('./../controllers/authController');
 const authMiddlewers = require('./../middlewares/authMiddlewers');
 const imguserMiddlewers = require('./../middlewares/imguserMiddlewers');
 const imgEdMiddlewers = require('./../middlewares/imgEdMiddlewers');
+const dynamicMiddleware = require('./../middlewares/dynamicMiddleware');
 const router = express.Router();
 router.post('/login', authController.login);
 router.get('/logout', authController.logout);
@@ -12,7 +13,8 @@ router.patch('/resetPassword/:token', authController.resetPassword);
 router.get('/resetPassword/:token', (req, res) => {
   res.render('user/resetPassword4');
 });
-router.post('/signup', authController.signup);
+router.post('/signup/user', authController.signup);
+router.post('/signup/eng', imgEdMiddlewers.uploadUserEducationce, dynamicMiddleware.setPathImginBody("educations", "educationcertificate"), authController.signup);
 // router.use(authMiddlewers.protect);
 router.patch('/activeMe', authMiddlewers.protect, userController.activeMe);
 // router.use(authMiddlewers.isactive)
@@ -36,7 +38,7 @@ router.patch(
 router.patch(
   '/updateEd',
   authMiddlewers.protect,
-  imgEdMiddlewers.uploadUserEducationce ,
+  imgEdMiddlewers.uploadUserEducationce,
   userController.updateMe
 );
 router.patch(

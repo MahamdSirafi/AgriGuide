@@ -5,20 +5,24 @@ const advicesSchema = new mongoose.Schema({
     required: [true, 'Please enter the description'],
     trim: true,
   },
-  type_of_classify:[{
-          type: mongoose.Schema.ObjectId,
-          ref:'Type_of_classify',
-                required: [true, ' the advice must belong to a type .']
-        }],
-        
-    user: {
-      type: mongoose.Schema.ObjectId,
-      ref: 'User',
-      required: [true, ''],
-    },
-  
-},{
-  timestamps:true
+  type_of_classify: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'Type_of_classify',
+    required: [true, ' the advice must belong to a type .']
+  },
+
+  user: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: [true, ''],
+  },
+  active: {
+    type: Boolean,
+    default: false
+  },
+
+}, {
+  timestamps: true
 });
 const Advices = mongoose.model("Advices", advicesSchema);
 module.exports = Advices;
