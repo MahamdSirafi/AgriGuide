@@ -1,0 +1,17 @@
+const mongoose = require("mongoose");
+const pestsSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, 'Please enter the pests name'],
+    trim: true,
+  },
+  symptoms_of_injury: {
+    type: String,
+    required: [true, 'Please enter the pests name'],
+    trim: true,
+  },
+},{
+  timestamps:true
+});
+const Pests = mongoose.model("Pests", pestsSchema);
+module.exports = Pests;
