@@ -5,6 +5,37 @@ const type_of_classifySchema = new mongoose.Schema(
       type: String,
       required: [true, 'enter name.'],
     },
+    // المواسم
+    planting_date:
+    {
+      type: String,
+      required: [true, 'ادخل وصف عن المواسم'],
+    },
+
+    //طرق الري
+    irrigation:
+    {
+      type: String,
+      required: [true, 'ادخل وصف عن طريقة الري'],
+
+
+    },
+    //طرق الجني
+    reep_method:
+    {
+      type: String,
+      required: [true, 'ادخل وصف عن طريقة الجني'],
+
+    },
+
+    photo: {
+      type: String,
+      required: [true, 'ادخل صورة'],
+    },
+    discription: {
+      type: String,
+      required: [true, 'ادخل وصف'],
+    },
     //العناية
     care: [
       {
@@ -29,38 +60,28 @@ const type_of_classifySchema = new mongoose.Schema(
         required: [true, 'type must belong to a pests.'],
       },
     ],
-    // المواسم
-    seasons: [
-      {
-        type: String,
-        enum: ['summer', 'winter', 'autumn', 'the spring'],
-        default: 'summer',
-      },
-    ],
+    // طرق التخزين
+    storage_method:
+    {
+
+      type: mongoose.Schema.ObjectId,
+      ref: 'Storage',
+      required: [true, 'type must belong to a storage methode.'],
+    },
+
+
+
     // القيمة الغذائية
     nutritional_value: [
       {
         type: String,
         enum: ['proteins', 'sugars', 'mineral salts', 'vitamins'],
-        default: 'proteins',
+        default: '',
       },
     ],
-    // طرق التخزين
-    storage_method: [
-      {
-        type: String,
-        enum: ['cooling', 'pickling', ' drying', 'sort', 'fill'],
-        default: undefined,
-      },
-    ],
-    //طرق الجني
-    reep_method: [
-      {
-        type: String,
-        enum: ['pick', 'harvest', 'rip'],
-        default: 'pick',
-      },
-    ],
+
+
+
     //اصناف النبات
     plant_varieties: [
       {
@@ -73,25 +94,10 @@ const type_of_classifySchema = new mongoose.Schema(
           'legume crops',
           'decoration plant',
         ],
-        default: 'vegetable crops',
+        default: '',
       },
     ],
-    //طرق الري
-    irrigation: [
-      {
-        type: String,
-        enum: ['spray', 'dotting', 'watering', 'immersion'],
-        default: 'spray ',
-      },
-    ],
-    photo: {
-      type: String,
-      required: [true, 'enter photo.'],
-    },
-    discription: {
-      type: String,
-      required: [true, 'enter photo.'],
-    },
+
   },
   {
     timestamps: true,
