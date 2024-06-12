@@ -14,6 +14,7 @@ const AppError = require('./utils/appError');
 const errorGlobal = require('./controllers/errorController');
 // Start express app
 const app = express();
+//mas ------
 // 1) GLOBAL MIDDLEWARES
 // Implement CORS
 //سماح للمواقع من الاتصال بالخدمة
