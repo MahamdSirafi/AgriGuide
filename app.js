@@ -74,7 +74,7 @@ app.use(
 app.use(compression());
 const userRouter = require('./routes/userRoutes');
 const storageRouter= require('./routes/storageRouter')
-const agriculture_mechanismRouter= require('./routes/agriculture_mechanismRouter')
+//const agriculture_mechanismRouter= require('./routes/agriculture_mechanismRouter')
 const advicesRouter= require('./routes/advicesRouter')
 const careRouter= require('./routes/careRouter')
 const pestsRouter= require('./routes/pestsRouter')
@@ -84,7 +84,7 @@ const chatRouter= require('./routes/chatRouter')
 // 3) ROUTES
 app.use('/', userRouter);
 app.use('/api/v1.0.0/storages', storageRouter);
-app.use('/api/v1.0.0/agriculture_mechanisms', agriculture_mechanismRouter);
+//app.use('/api/v1.0.0/agriculture_mechanisms', agriculture_mechanismRouter);
 app.use('/api/v1.0.0/advices', advicesRouter);
 app.use('/api/v1.0.0/cares', careRouter);
 app.use('/api/v1.0.0/pests', pestsRouter);

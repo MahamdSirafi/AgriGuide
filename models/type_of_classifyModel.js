@@ -11,6 +11,14 @@ const type_of_classifySchema = new mongoose.Schema(
       type: String,
       required: [true, 'ادخل وصف عن المواسم'],
     },
+    //الية الزراعة
+    agr_machine:{
+      type: String,
+      required: [true, 'ادخل وصف عن الية الزراعة'],
+
+
+
+    },
 
     //طرق الري
     irrigation:
