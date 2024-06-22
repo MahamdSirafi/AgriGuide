@@ -1,0 +1,98 @@
+# API for a chain of sweets shops
+
+## Introduction
+
+This project contains an application to help users in planting and caring for agricultural crops and plants, as it contains a lot of data that helps in the planting process, provided by experts and engineers, and allows the possibility of adding other tips for the planting process and plant care.
+
+
+## Database Seed
+
+- create an admin user in the database
+
+## Install
+
+Some basic Git commands are:
+
+```
+$ git clone https://github.com/MahamdSirafi/sweet.git
+$ cd sweet
+$ npm install
+```
+
+## Start development
+
+```
+$ npm start
+```
+
+## Languages & tools
+
+- [Node](https://nodejs.org/en/)
+
+- [Express](https://expressjs.com/)
+
+- [Mongoose](https://mongoosejs.com/)
+
+## API Endpoints
+
+Please refer to the API documentation for more details on request and response formats.
+
+## Setting Up .env File
+
+This guide explains how to set up an `.env` file to configure environment variables.
+
+### Steps
+
+1. Create a new file and name it `.env` in your project directory.
+
+2. Open the `.env` file using any text editor.
+
+3. Add the environment variables and their values to the file. Write each variable on a separate line in the following format:
+
+Here are some examples:
+
+NODE_ENV=development
+
+PORT=7000
+
+DATABASE_LOCAL=mongodb://127.0.0.1:27017/Databasesweet
+
+JWT_SECRET=asjdhgjed2187yhdkjawh
+
+JWT_EXPIRES_IN=90d
+
+JWT_COOKIE_EXPIRES_IN=90
+
+SERVICE_EMIL=Sendgrid
+
+EMAIL_HOST=sandbox.smtp.mailtrap.io
+
+EMAIL_PORT=222
+
+EMAIL_USERNAME=sjhajd
+
+EMAIL_PASSWORD=askbhfajs
+
+EMAIL_FROM=test@gmail.com
+
+GMAIL_USERNAME=
+
+GMAIL_PASSWORD=
+
+SENDGRID_USERNAME=
+
+SENDGRID_PASSWORD=
+
+## Technologies Used
+
+- Node.js: JavaScript runtime environment
+- Express.js: Web application framework for Node.js
+- Passport.js: Authentication middleware for Node.js
+- JSON Web Tokens (JWT): Token-based authentication mechanism
+- MongoDB: NoSQL database for data storage
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+Feel free to modify the code according to your specific project requirements.
