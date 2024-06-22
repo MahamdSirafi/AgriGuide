@@ -14,8 +14,8 @@ This project contains an application to help users in planting and caring for ag
 Some basic Git commands are:
 
 ```
-$ git clone https://github.com/MahamdSirafi/sweet.git
-$ cd sweet
+$ git clone https://github.com/MahamdSirafi/AgriGuide.git
+$ cd api
 $ npm install
 ```
 
