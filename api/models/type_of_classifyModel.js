@@ -6,34 +6,25 @@ const type_of_classifySchema = new mongoose.Schema(
       required: [true, 'enter name.'],
     },
     // المواسم
-    planting_date:
-    {
+    planting_date: {
       type: String,
       required: [true, 'ادخل وصف عن المواسم'],
     },
     //الية الزراعة
-    agr_machine:{
+    agr_machine: {
       type: String,
       required: [true, 'ادخل وصف عن الية الزراعة'],
-
-
-
     },
 
     //طرق الري
-    irrigation:
-    {
+    irrigation: {
       type: String,
       required: [true, 'ادخل وصف عن طريقة الري'],
-
-
     },
     //طرق الجني
-    reep_method:
-    {
+    reep_method: {
       type: String,
       required: [true, 'ادخل وصف عن طريقة الجني'],
-
     },
 
     photo: {
@@ -52,14 +43,6 @@ const type_of_classifySchema = new mongoose.Schema(
         required: [true, 'type must belong to a care.'],
       },
     ],
-    //الية الزراعة
-    agriculture_mechanism: [
-      {
-        type: mongoose.Schema.ObjectId,
-        ref: 'Agriculture_mechanism',
-        required: [true, 'type must belong to a Agriculture_mechanism.'],
-      },
-    ],
     //الافات
     pests: [
       {
@@ -69,15 +52,11 @@ const type_of_classifySchema = new mongoose.Schema(
       },
     ],
     // طرق التخزين
-    storage_method:
-    {
-
+    storage_method: {
       type: mongoose.Schema.ObjectId,
       ref: 'Storage',
       required: [true, 'type must belong to a storage methode.'],
     },
-
-
 
     // القيمة الغذائية
     nutritional_value: [
@@ -87,8 +66,6 @@ const type_of_classifySchema = new mongoose.Schema(
         default: '',
       },
     ],
-
-
 
     //اصناف النبات
     plant_varieties: [
@@ -105,7 +82,6 @@ const type_of_classifySchema = new mongoose.Schema(
         default: '',
       },
     ],
-
   },
   {
     timestamps: true,
